@@ -1,0 +1,59 @@
+/* .card {
+  object-fit: contain;
+  text-align: center;
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid #000000;
+  transition: 0.1s linear;
+} */
+
+.catvg {
+  position: absolute;
+  /* scale: 0.1; */
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 300px;
+  z-index: -1;
+  /* width: 40px; */
+
+  /* width: 40px; */
+}
+.card {
+  object-fit: contain;
+  text-align: center;
+  border: 2px solid #000000;
+  transition: 0.1s linear;
+}
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  .card {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media screen and (min-width: 1301px) {
+  .card {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.card:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

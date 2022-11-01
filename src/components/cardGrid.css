@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Gemunu Libre', sans-serif;
+  /* text-transform: uppercase; */
+}
+
+.cls-eye1 {
+  /* transform: translateX(30px) translateY(30px); */
+}
+
+.cls-eye2 {
+  /* transform: translateX(30px) translateY(20px); */
+}
+
+.cat {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  z-index: 2;
+  width: 19px;
+  top: 51.5%;
+  left: 0%;
+  /* background: red; */
+  /* rotate: 80deg; */
+}
+
+.eye1 {
+  left: 18.5%;
+}
+
+.eye2 {
+  left: 57%;
+}
+
+.cardGrid {
+  position: relative;
+  min-width: 80vw;
+  max-width: 80vw;
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  place-items: center;
+  /* align-self: center; */
+  grid-gap: 3rem 3rem;
+  min-height: 0;
+  min-width: 0;
+  background: white;
+  padding: 2rem;
+  margin-top: 16vh;
+  border: 2px solid;
+  /* border-color: red; */
+  border-radius: 2.5rem;
+  box-shadow: 0px 10px 19px -9px rgba(0, 0, 0, 0.62);
+  /* margin-top: 50px; */
+}
+
+.border {
+  /* border-color: red; */
+  transition: border-color 500ms ease-in-out;
+  /* box-shadow: 0px 10px 19px -9px rgba(255, 0, 0, 0.62); */
+  animation: change-color 0.3s ease-out 0s forwards;
+}
+
+/* CSS ANIMATION!!
+ - LOGIC - if score is 0 and border is true ( this can be done by setting a state to 
+ true when clicking on a card as 0 is true from the start) then apply this css, in my case i added a class to the element if the
+ logic was true.
+ - below is the animation used to create a shake and background effect!
+*/
+
+@keyframes change-color {
+  0% {
+    border-color: rgb(0, 0, 0);
+    box-shadow: 0px 10px 19px -9px rgba(0, 0, 0, 0.62);
+  }
+  50% {
+    border-color: red;
+    box-shadow: 2px 0px 18px 2px rgba(255, 0, 0, 0.45);
+    transform: translateX(10px);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+  100% {
+    border-color: rgb(0, 0, 0);
+    transform: translateX(0px);
+
+    box-shadow: 0px 10px 19px -9px rgba(0, 0, 0, 0.62);
+  }
+}
+
+.header-1 {
+  position: absolute;
+  top: -4%;
+  left: 6%;
+  background: white;
+  padding: 7px 20px;
+  border: 2px solid;
+}
+
+.absoluter {
+  position: absolute;
+}
+
+.score {
+  position: absolute;
+  top: -4%;
+  left: 62%;
+  background: white;
+  padding: 7px 20px;
+  border: 2px solid;
+}
+
+.high-score {
+  position: absolute;
+  top: -4%;
+  left: 77%;
+  background: white;
+  padding: 7px 20px;
+  border: 2px solid;
+}
+
+.cat {
+  width: 200px;
+  max-width: 120px;
+  position: absolute;
+  top: -15%;
+  left: 43%;
+  transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* z-index: -1; */
+}
+
+.cat:hover {
+  scale: 0.9;
+  /* top: -10%; */
+}
+
+@media screen and (min-width: 1250px) {
+  .score {
+    top: -4%;
+    left: 67%;
+  }
+
+  .high-score {
+    top: -4%;
+    left: 80%;
+  }
+}
